@@ -1,0 +1,42 @@
+<p-toolbar styleClass="filter">
+  <ng-template #start>
+    <form [formGroup]="formGroup" class="card flex justify-center space-x-4">
+      <!-- Searchbox -->
+      <p-iconfield>
+        <p-inputicon styleClass="pi pi-search" />
+        <input
+          #keyword
+          type="text"
+          pInputText
+          formControlName="text"
+          placeholder="Filter by Business unit"
+          (keyup)="onInput(keyword.value)"
+        />
+      </p-iconfield>
+
+      <!-- Sort by -->
+      <p-select
+        #selectedSort
+        formControlName="selectedSort"
+        [options]="sortOptions"
+        optionLabel="name"
+        placeholder="Sort by"
+        ngClass="w-40"
+        (onChange)="onFilterBy('selectedSort', selectedSort.value.code)"
+      />
+    </form>
+  </ng-template>
+
+  <ng-template #end>
+    <div class="flex gap-4 mt-1">
+      <p-button
+        label="Refresh"
+        severity="secondary"
+        [outlined]="true"
+        styleClass="w-40"
+        (onClick)="onRefresh()"
+      />
+      <p-button label="Reset" styleClass="w-40" (onClick)="onReset()" />
+    </div>
+  </ng-template>
+</p-toolbar>

@@ -1,0 +1,4 @@
+:host ::ng-deep .app {
+  @apply flex flex-col gap-4 w-full text-center overflow-hidden;
+  height: 100vh;
+}

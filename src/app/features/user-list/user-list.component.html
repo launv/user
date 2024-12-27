@@ -1,0 +1,25 @@
+<div class="user-list">
+  @if (count > 0) {
+  <!-- @for Group-->
+  @for (group of groupList; track group ) {
+  <h1 class="">-- {{ group }} --</h1>
+  <!-- @for Group-->
+  @for (user of store.sortedUsers() | groupBy: group; track user.name ) {
+  <div>
+    <app-user-card
+      [user]="user"
+      (edit)="onEdit($event)"
+      (delete)="onDelete($event)"
+    ></app-user-card>
+  </div>
+  }
+  <!-- @for List -->
+  }
+  <!-- @for Group -->
+  }
+  <!--@else  -->
+  @else {
+  <p>There is no result</p>
+  }
+</div>
+<p-toast />

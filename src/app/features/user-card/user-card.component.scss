@@ -1,0 +1,7 @@
+:host ::ng-deep .user-card {
+  @apply w-full;
+
+  .center {
+    @apply flex flex-col flex-1 text-start px-4;
+  }
+}

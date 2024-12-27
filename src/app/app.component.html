@@ -1,0 +1,11 @@
+<div class="app">
+  <h1 class="text-4xl">User list</h1>
+
+  <div class="px-4">
+    <app-filter (refresh)="store.loadAll()"></app-filter>
+  </div>
+
+  <div class="flex-1 overflow-auto">
+    <app-user-list></app-user-list>
+  </div>
+</div>

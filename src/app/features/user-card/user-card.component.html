@@ -1,0 +1,31 @@
+<p-toolbar styleClass="user-card">
+  <ng-template #start>
+    <p-avatar label="P" shape="circle" />
+    <div class="center">
+      <label ngClass="font-bold">
+        {{ user.name }} - {{ user.business_unit }}
+      </label>
+      <label ngClass="text-slate-400">
+        {{ user.department }} - {{ user.age }}
+      </label>
+    </div>
+  </ng-template>
+
+  <ng-template #end>
+    <div class="flex gap-4 mt-1">
+      <p-button
+        label="Edit"
+        severity="secondary"
+        [outlined]="true"
+        styleClass="w-20"
+        (onClick)="edit.emit(user)"
+      />
+      <p-button
+        label="Delete"
+        severity="danger"
+        styleClass="w-20"
+        (onClick)="delete.emit(user)"
+      />
+    </div>
+  </ng-template>
+</p-toolbar>
