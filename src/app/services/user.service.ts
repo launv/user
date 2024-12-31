@@ -10,7 +10,7 @@ export class UserService {
 
   getAll() {
     return this.http
-      .get('../../assets/database.json')
+      .get('../../assets/json/database.json')
       .pipe(delay(200), shareReplay());
   }
 }
